@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var floor = prompt('아파트 층 수 입력')
+	document.write('<table border="1">')
+	for( ; floor>0; floor--) {		
+		document.write('<tr>')
+		for(j=1; j<5; j++) {
+			document.write('<td>' + (floor*100+j) + '호</td>')
+		}
+		document.write('</tr>')
+	}
+	document.write('</table>')
+</script>
+
+</body>
+</html>

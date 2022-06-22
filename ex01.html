@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var str = prompt('값 입력') /* script에서 만든 변수는 script안에서만 사용하고 html에서 사용할 수 없다. */
+	document.write( str )
+</script>
+
+<script type="text/javascript">
+	const name = '홍길동' /* 수정할 수 없는 값 ((script)const = (java)final) */
+	//name = '김개똥'
+	document.write(name+"님 안녕하세요")
+</script>
+
+<script type="text/javascript">
+	console.log( typeof 100 ) /* typeof: 자료형을 알려줌 */ /* number */
+	console.log( typeof '안녕' ) /* string */
+	console.log( typeof 1.123 ) /* number */
+	console.log( typeof {'키':'값'} ) /* object */
+	console.log( typeof ['배열', '입니다'] ) /* object */
+	
+</script>
+
+<!--
+   javascript: 부가적인 기능
+   css: 디자인
+   html: 기본적인 틀을 만들어줌
+-->
+<!-- 자바스크립트 -->
+<script type="text/javascript">
+	var age = 23; /* var: 변수 생성 - 타입을 따로 지정하지 않는다.*/
+	document.write("<div style='color: red;'>자바스크립트</div>") /* 현재페이지에 써줌 '' or "" 사용*/
+	document.write(age+"살 입니다")
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

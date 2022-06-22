@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	.image { width: 380px; height: 380px;}
+	.coco { text-align: center; }
+	.but { background-color: pink; text-align: center; padding: 0 0 20px 0;}
+</style>
+
+<script type="text/javascript">
+	var num = 1
+	function pre() {
+		let img = document.getElementById('img') /* id를 가져오면 태그 자체를 가져온다 */
+		if (num > 0) {
+			num--;
+			if (num == 0) {
+				num = 8
+			}
+			img.src = 'images/mococo' + num + '.png'
+		}
+	}
+	function next() {
+		let img = document.getElementById('img') /* id를 가져오면 태그 자체를 가져온다 */
+		if (num < 9) {
+			num++;
+			if (num == 9) {
+				num = 1
+			}
+			img.src = 'images/mococo' + num + '.png'
+		}
+	}
+</script>
+
+</head>
+<body>
+	<div class="coco">
+		<img class="image" id="img" src="images/mococo1.png">
+	</div>
+	<div class="but">
+		<input type="button" onclick="pre()" value="이전사진">
+		<input type="button" onclick="next()" value="다음사진">
+	</div>
+</body>
+
+</html>

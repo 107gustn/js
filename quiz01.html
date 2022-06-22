@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	var name = prompt('당신의 이름은?')
+	var age = prompt(name + '님의 나이는?')
+	var addr = prompt(name + '님의 주소는?')
+	
+	/* table과같은 html문법, css를 사용하지 못한다. */
+	document.write('<table border="1">')
+	document.write('<tr>')
+	document.write('<th>이름</th><th>나이</th><th>주소</th>')
+	document.write('</tr>')
+	document.write('<tr>')
+	document.write('<td>'+name+'</td><td>'+age+'</td><td>'+addr+'</td>')
+	document.write('</tr>')
+	document.write('</table>')
+</script>
+
+</head>
+<body>
+</body>
+</html>

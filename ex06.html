@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function test() {
+		alert('호출')
+		//location.href='ex05.html'
+		fo.submit() /* action 경로로 이동 */ /* 입력한 값을 지정 name에 담아서 전달해줌 */
+	}
+</script>
+
+</head>
+<body>
+	<!-- 값을 담아서 페이지 이동 -->
+	<form id="fo" action="ex05.html">
+		<input type="text" name="abc"><br>
+		<input type="button" onclick="test()" value="전송"> <!-- submit은 무조건 action 경로로 이동한다 -->
+	</form>
+	
+	<!-- 단순히 페이지만 이동 --> <!-- 모두 동일하게 동작 -->
+<script type="text/javascript">
+	function mo() { location.href='ex05.html' }
+</script>
+	<a href="ex05.html">aaa</a><br>
+	<button type="button" onclick="location.href='ex05.html'">aaa</button>
+	<br>
+	<input type="button" onclick="mo()" value="aaa">
+</body>
+</html>
