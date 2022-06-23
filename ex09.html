@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function init() {
+		//alert('실행')
+	}
+	function over(obj) {
+		obj.style.color = 'red'
+	}
+	function out() {
+		document.getElementById('h1').style.color='black'
+	}
+</script>
+
+</head>
+<body onload="init()"> <!-- onload: 값 초기화용도로 해당 페이지가 실행하게 되면 실행된다. -->
+	<h1 id="h1" onmouseover="over(this)" onmouseout="out()">마우스 오버</h1> <!-- this: 자기자신에 대한 태그값 -->
+</body>
+</html>

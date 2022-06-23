@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript">
-	function pwchk() {
-		pw1 = document.getElementById("pw1").value;
-		pw2 = document.getElementById("pw2").value;
-		if (pw1 == pw2) {
-			document.getElementById("lbl_pw2").innerHTML = "확인!!";
-		} else {
-			document.getElementById("lbl_pw2").innerHTML = "불일치!!";
-			document.getElementById("pw1").value = "";
-			document.getElementById("pw2").value = "";
-			document.getElementById("pw1").focus();
+<meta charset="UTF-8">
+<title>Insert title here</title>
 
+<script type="text/javascript">
+	function pwcheck() {
+		pw = document.getElementById('pw1').value
+		pwc = document.getElementById('pw2').value
+		if(pw == pwc) {
+			document.getElementById('pwdchk').innerHTML = "확인!!"
+		} else {
+			document.getElementById('pwdchk').innerHTML = "불일치!!"
+			document.getElementById('pw1').value = ""
+			document.getElementById('pw2').value = ""
+			document.getElementById('pw1').focus()
 		}
 	}
-	function chkData() {
-		if (document.getElementById('id').value == "") {
-			alert("아이디는 필수 사항입니다.");
-		} else if (document.getElementById('pw1').value == "") {
-			alert("비밀번호는 필수 사항입니다.");
-		} else if (document.getElementById('pw2').value == "") {
-			alert("비밀번호 확인은 필수 사항입니다.");
+	
+	function check() {
+		let id = document.getElementById('id')
+		let pw = document.getElementById('pw1')
+		let pwc = document.getElementById('pw2')
+		if(id.value == "") {
+			alert("아이디를 입력해주세요.")
+			id.focus()
+		} else if(pw.value == "") {
+			alert("비밀번호를 입력해주세요.")
+			pw1.focus()
+		} else if(pwc.value == "") {
+			alert("비밀번호 확인을 입력해주세요.")
+			pw2.focus()
 		} else {
-			fo.submit();
+			fo.submit()
 		}
 	}
 </script>
+
 </head>
 <body>
-	<h1>계정 등록 페이지 입니다.</h1>
-	<form id="fo" action="success.html" method='post'>
-		<input type="text" placeholder="아이디" id="id" name="id"><span
-			style="color: red">(*필수항목)</span><br> <input type="text"
-			id="pw1" placeholder="비밀번호" name="pwd"><span
-			style="color: red">(*필수 항목)</span><br> <input type="text"
-			id="pw2" placeholder="비밀번호 확인" onchange="pwchk()"> <label
-			id="lbl_pw2"></label><br> <input type="text" placeholder="이름"
-			name="name"><br>
+	<form id="fo" action="ex05.html">
+		<input type="text" placeholder="아이디" id="id"><span style="color: red">(*필수항목)</span><br>
+		<input type="text" placeholder="비밀번호" id="pw1"><span style="color: red">(*필수항목)</span><br>
+		<input type="text" placeholder="비밀번호 확인" id="pw2" onchange="pwcheck()"><label id="pwdchk"></label><br>
+		<input type="text" placeholder="이름" id="name">
 		<hr>
-		<input type="button" value="등록" onclick="chkData()">
+		<input type="button" value="등록" onclick="check()">
 	</form>
 </body>
 </html>

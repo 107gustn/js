@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<!-- 재귀호출 -->
+	<div id="digClock01"></div>
+	<button onclick="test()">클릭</button>
+	<button onclick="digClock()">시작</button>
+	<button onclick="end()">종료</button>
+	<hr>
+	<div id="dig01"></div>
+	<button onclick="startD()">시작</button>
+	<button onclick="endD()">종료</button>
+	<script type="text/javascript">
+	var i;
+	function timeStart() {
+		var d = new Date()
+		document.getElementById("dig01").innerHTML = d.toLocaleTimeString()
+	}
+	function startD() {
+		i = setInterval(timeStart, 1000) /* setInterval(): 외부에서 호출하게 될떄 사용, 다른 함수에서 한번만 호출 */
+	}
+	function endD() {
+		clearInterval(i)
+	}
+	
+	
+	var e
+	function digClock() { /* 현재시간 출력 */
+		var today = new Date()
+		var timeStr = today.getFullYear()+"년" + (today.getMonth()+1)+"월"+today.getDate()+ "일" + today.getHours()+"시"+today.getMinutes()+"분"+today.getSeconds()+"초"
+		document.getElementById("digClock01").innerHTML=timeStr
+		e = setTimeout('digClock()', 1000) /* setTimeout(): 1초에 한번씩 자기자신 함수를 호출해줌 */
+	}
+	function end() {
+		clearTimeout(e) /* 종료 */
+	}
+	</script>
+	
+	<hr>
+	<p id="d1"></p>
+	<p id="d2"></p>
+	<p id="d3"></p>
+	<script type="text/javascript">
+		var today = new Date() /* 날짜를 표시 */
+		document.getElementById("d1").innerHTML=today.getFullYear()+"년"
+		
+		document.getElementById("d2").innerHTML=today.getMonth()+1+"월"+today.getDate()+ "일"
+		
+		document.getElementById("d3").innerHTML=today.getHours()+"시"+today.getMinutes()+"분"+today.getSeconds()+"초"
+	</script>
+	
+</body>
+</html>

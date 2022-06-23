@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+	#img { width:100px; height:100px; }
+	img.abc:hover { width:110px; height: 110px; }
+</style>
+
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function init() {
+		let arr =[ "mococo1.png", "mococo2.png", "mococo3.png", "mococo4.png", "mococo5.png" ]
+		for(i=0; i<arr.length; i++) {
+			img = document.createElement("img")
+			img.src = "images/" + arr[i]
+			img.id = "img"
+			document.getElementById('id').appendChild(img)
+		}
+		
+		let insert = document.getElementById('insert')
+		let selArr = ["야구", "야구11", "야구22"]
+		for(i=0; i<selArr.length; i++) {
+			var opt = document.createElement("option")
+			//opt.value = arr[i]
+			opt.innerHTML = selArr[i]
+			insert.appendChild(opt)
+		}
+		
+	}
+	
+	var img;
+	function add() {
+		// 베열 생성 후 이미지 이름 5개 저장 후 표현
+		
+		img = document.createElement("img")
+		//img.src = "images/img.jpg"
+		//img.id = "img" /* id 추가 */
+		img.setAttribute("src", "images/img.jpg")
+		img.setAttribute("id", "img")
+		//img.className = "abc def" /* class 추가 */
+		img.setAttribute("onClick", "test(this)") /* 속성값 추가 */
+		//img.width = 100
+		//img.style.height = "100px"
+		//document.body.appendChild(img)
+		document.getElementById('test').appendChild(img)
+	}
+	
+	function rm() {
+		//document.body.removeChild(img)
+		document.getElementById('id').innerHTML = "" /* 하위태그를 지움 */
+		
+	}
+	
+	function test(obj) {
+		//obj.style.display="none"
+		//document.body.removeChild(obj)
+		document.getElementById('test').removeChild(obj)
+	}
+	
+	
+</script>
+
+</head>
+<body onload="init()">
+	<select id="insert"></select>
+	<div id="id"></div>
+	
+	<p id="test">test</p>
+	<a href="#" onclick="add()">이미지추가</a>
+	<a href="#" onclick="rm()">이미지삭제</a>
+	
+</body>
+</html>
