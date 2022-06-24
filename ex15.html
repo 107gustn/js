@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	#tagAdd { width: 50%; border: 1px solid #999; } /* 기본사이즈와 틀 */
+	.accountCell { width: 40%; text-align: center; }
+	.balanceCell { text-align: center; }
+	tr:nth-child(even) {background-color: beige; } /* tr의 짝수번째 값처리 */
+</style>
+
+<script type="text/javascript">
+	function tagAddFunc() {
+		let arrName = ['김개똥', '홍길동', '고길동', '고도리']
+		let arrAddr = ['별동별', '산골짜기', '마포구', '동양화']
+		let table = document.getElementById("tagAdd")
+		
+		for(let i=0; i<arrName.length; i++) {
+			tr = document.createElement('tr')
+			td1 = document.createElement('td')
+			td1.innerHTML = arrName[i]
+			td1.className = "accountCell "
+			tr.appendChild(td1)
+			
+			td2 = document.createElement('td')
+			td2.innerHTML = arrAddr[i]
+			td2.className = "balanceCell"
+			tr.appendChild(td2)
+			
+			table.appendChild(tr)
+		}
+		
+	}
+</script>
+
+</head>
+<body onload="tagAddFunc()">
+	<table id="tagAdd">
+		<tr><th>이 름</th><th>주 소</th></tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	#remove { display: none; } /* display: none; - 해당 내용을 숨겨줌 */
+	#remove.a { display: block; background-color: aqua; } /* remove.a: remove라는 아이디에 a라는 클래스에 적용 */ /* display: block; - 해당 내용을 보여줌 */
+</style>
+
+<script type="text/javascript">
+	function init() {
+		var t1 = document.getElementById("target1") /* target id를 가져옴 */
+		var t2 = document.getElementById("target2")
+		t1.addEventListener("click", btn_func) /* 이벤트 설정 - 해당아이디("이벤트가 일어나면", "함수호출") */
+		t2.addEventListener("click", btn_func)
+	}
+	
+	function btn_func() {
+		switch(event.target.id) { /* 이벤트가 일어난 해당 아이디를 가져옴*/
+		case "target1": //alert("target1 클릭"); break;
+		case "target2": //alert("target2 클릭"); break;
+		}
+		
+		let remove = document.getElementById("remove")
+		remove.setAttribute("class", "a");
+	}
+	
+	function blockRM() {
+		let remove = document.getElementById("remove")
+		remove.removeAttribute("class") /* 해당 속성 삭제 */
+	}
+</script>
+
+</head>
+<body onload="init()">
+	
+	<input type="button" id="target1" value="btn01">
+	<input type="button" id="target2" value="btn02">
+	
+	<div id="remove">
+		<h3>안녕하세요</h3>
+		<input type="button" value="되돌리기" onclick="blockRM()">
+	</div>
+	<div> <h2>되돌리기</h2> </div>
+	
+</body>
+</html>

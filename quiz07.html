@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	#resimg { display: none; }
+	#resimg.a { display: block; }
+</style>
+
+<script type="text/javascript">
+	function init() {
+		var b1 = document.getElementById("bt1")
+		var b2 = document.getElementById("bt2")
+		var b3 = document.getElementById("bt3")
+		
+		b1.addEventListener("click", btn_func)
+		b2.addEventListener("click", btn_func)
+		b3.addEventListener("click", btn_func)
+	}
+	
+	function btn_func() {
+		switch(event.target.id) {
+		case "bt1": document.getElementById("resimg").src = "images/mococo1.png"; break;
+		case "bt2": document.getElementById("resimg").src = "images/mococo2.png"; break;
+		case "bt3": document.getElementById("resimg").src = "images/mococo3.png"; break;
+		}
+		
+		let resimg = document.getElementById("resimg")
+		resimg.setAttribute("class", "a");
+	}
+	
+	function imgRM() {
+		let remove = document.getElementById("resimg")
+		remove.removeAttribute("class")
+		if(e != undefined){
+    		clearTimeout(e);
+    	}
+	}
+	
+	var e;
+	var flag=true;
+	function auto(){
+		if(flag){
+			let resimg = document.getElementById("resimg")
+			resimg.setAttribute("class", "a");
+		}else{
+			let remove = document.getElementById("resimg")
+			remove.removeAttribute("class")
+		}
+		flag = !flag;
+    	e = setTimeout('auto()', 100);
+	}
+	
+	
+</script>
+
+</head>
+<body onload="init()">
+	<input type="button" id="bt1" value="버튼 1">
+	<input type="button" id="bt2" value="버튼 2">
+	<input type="button" id="bt3" value="버튼 3">
+	<input type="button" value="지동" onclick="auto()">
+	<input type="button" value="지우기" onclick="imgRM()">
+	
+	<img id="resimg" width="150" height="150">
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		function mDown(obj) {
+			obj.style.backgroundColor = "red"; /* javascript에서 합성어는 단어 연결 첫글자에 대문자를 사용한다 */
+			obj.style.fontSize = "30pt"
+			obj.innerHTML = "놔주세요"
+		}
+		
+		function mUp(obj) {
+			obj.style.backgroundColor = "aqua";
+			obj.style.fontSize = "12pt"
+			obj.innerHTML = "굿~"
+		}
+		
+	</script>
+
+	<div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color: aqua; width: 90px; height: 20px; padding: 40px;" >클 릭</div>
+
+</body>
+</html>
