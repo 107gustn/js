@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+	function test() {
+		$('#first').slideToggle("slow")
+	}
+</script>
+
+<style type="text/css">
+	#slide{ padding: 5px; text-align: center; background-color: aqua; }
+	#first { display: none; background-color: gray; height: 100px; }
+</style>
+
+</head>
+<body>
+	<div id="slide" onclick="test()">[공 지]</div>
+	<div id="first">영역</div>
+</body>
+</html>

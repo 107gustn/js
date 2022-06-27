@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+	function move(obj, time) {
+		$(obj).stop().animate({ left: -450, top: 0 }, time) /* 자기자신을 멈춰줌, 해당위치에서, 시간설정 */
+	}
+	function back(css) {
+		$(css).stop().animate({left: 0, top: 0}) /* 자기자신을 멈춰줌. 해당위치에서 */
+	}
+</script>
+
+<style type="text/css">
+	img { width: 100px; height: 100px; }
+	.moving { border: 2px solid #000; margin: auto; text-align: right; width: 550px; }
+	.moving img { cursor: pointer; position: relative; } /* 커서 포인터를 줌 */
+</style>
+
+</head>
+<body>
+
+	<div>
+		<button onclick="back('img')">초기화 상태</button>
+	</div>
+	<div class="moving">
+		<img onclick="move(this, 6000)" src="images/car01.png"><br> <!-- 자기자신, 시간지정 -->
+		<img onclick="move(this, 3000)" src="images/car02.png"><br>
+		<img onclick="move(this, 1000)" src="images/car03.png"><br>
+	</div>
+		
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("#panel").click(function(){ $("#panel").slideUp("fase") })
+		$("#slide").mouseenter(function(){ $("#panel").slideDown(5000) })
+		$("#flip").click(function(){ $("#panel").slideToggle("slow") })
+		$("#stop").click(function(){ $("#panel").stop() })
+	})
+</script>
+
+<style type="text/css">
+	#panel, #slide, #flip {
+		padding: 5px; text-align: center;
+		background-color: aqua; border: 1px solid black;
+	}
+	#panel { padding: 70px; display: none; background-color: gray; }
+</style>
+
+</head>
+<body>
+	<div id="slide">[오늘] [내일] [모레]</div>
+	<div id="panel">비가 주룩주룩<br>옵니다</div>
+	<div id="flip">toggle slide</div>
+	<button id="stop">멈춤</button>
+</body>
+</html>

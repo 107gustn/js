@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.important { font-weight: bold; font-size: xx-large; }
+	.blue { color: blue; }
+	.red { color: red; }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		$("button.add").click(function(){ /* 버튼에 있는 클래스 add가 클릭이 일어나면 */
+			$("h1, h2, p").addClass("blue") /* 해당 태그에 클래스 추가 */
+			$("div").addClass("important")
+		})
+		
+		$("button.remove").click(function(){ /* 버튼에 있는 클래스 remove가 클릭이 일어나면 */
+			$("h1, h2, p").removeClass("blue") /* 해당 클래스 삭제 */
+			$("div").removeClass("important")
+		})
+		
+		$("button.tog").click(function(){ /* 버튼에 있는 클래스 tog가 클릭이 일어나면 */
+			$("#01, #02, #03, #04").toggleClass("red")
+		})
+	})
+</script>
+
+</head>
+<body>
+	<h1>HTML</h1> <h2>CSS</h2> <p>JAVASCRIPT</p>
+	<div>JQUERY</div><hr>
+	<button class="add">css 적용</button>
+	<button class="remove">css 적용 해제</button>
+	
+	<hr>
+	<button class="tog">toggle btn</button>
+	
+	<h1 id="01">HTML</h1> <h2 id="02">CSS</h2>
+	<p id="03">JAVASCRIPT</p>
+	<div id="04">JQUERY</div><hr>
+</body>
+</html>

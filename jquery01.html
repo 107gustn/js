@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="jquery-3.6.0.min.js"></script> <!-- 제이쿼리 문법사용을 위한 파일 경로 추가 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 외부로부터 해당기능을 가져와서 사용 -->
+
+<script type="text/javascript">
+//	$(document).ready(function() {  /* $: 제이쿼리 문법 */ /* document: 현재 페이지에 준비되어 실행 */
+//		$("button").click(function() { /* button태그가 클릭이 일어나면 함수 실행 */
+//			$("p").hide() /* 함수에 대한 내용 */ /* p태그를 숨겨줌 */
+//		})
+//		$("#s").click(function() { /* #: id,  .: class */
+//			$("p").show()
+//		})
+//	})
+
+//	$().ready(function() { /* 처음에는 document 생략가능 */
+//		$("button").click(function() {
+//			$("p").hide()
+//		})
+//		$("#s").click(function() {
+//			$("p").show()
+//		})
+//	})
+
+//	$(function() { /* ready 또한 생략 가능 */
+//		$("button").click(function() {
+//			$("p").hide()
+//		})
+//		$("#s").click(function() {
+//			$("p").show()
+//		})
+//	})
+
+	function hi(){ /* 제이쿼리 */
+		$("p").hide()
+	}
+	function sh(){ 
+		//document.getElementById("p").style.display="block" /* 자바스크립트 */
+		$("p").show()
+	}
+</script>
+
+</head>
+<body>
+	<p id="p">안녕하세요.</p>
+	<button onclick="hi()">클릭</button>
+	<button id="s" onclick="sh()">보이기</button>
+</body>
+</html>

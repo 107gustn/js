@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 위에 부분이 먼저 읽힘 -->
+<script src="jquery-1.12.1-ui.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("#drg").draggable();
+	})
+</script>
+
+<style type="text/css">
+	#drg {
+		width: 200px; height: 100px;
+		background-color: aqua;
+		border-style: dotted;
+	}
+</style>
+
+</head>
+<body>
+	<div id="drg">
+		<p><b>드래그~</b></p>
+	</div>
+</body>
+</html>
